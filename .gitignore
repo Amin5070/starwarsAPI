@@ -1,5 +1,5 @@
+venv
 *.log
-*.txt
+*.pyc
+output.txt
 .idea
-models
-utils
