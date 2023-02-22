@@ -1,21 +1,12 @@
-"""
-ResourceBase
-    Character
-    Film
-    Starship
-"""
-
-
 class ResourceBase(object):
     """
-    Base class representing required methods to be implemented by all resource
-    classes
+    Base class representing required methods to be implemented by all resource classes
     """
 
-    resources = ["planets", "starships", "people",
-                 "vehilce", "films", "spacies"]
+    resources = ["people", "planets", "starships",
+                 "vehicles", "films", "species"]
 
-    def __init__(self) -> None:
+    def __init__(self):
         self.home_url = "https://swapi.dev/"
 
     def get_count(self):
@@ -25,4 +16,4 @@ class ResourceBase(object):
         raise NotImplementedError
 
     def get_sample_data(self):
-        raise
+        raise NotImplementedError

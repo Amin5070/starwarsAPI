@@ -3,3 +3,4 @@ venv
 *.pyc
 output.txt
 .idea
+database_.sql
