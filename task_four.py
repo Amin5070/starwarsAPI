@@ -11,13 +11,15 @@ For example - "A new hope" movie has following resource endpoints -
 - species  40
 """
 
+from multiprocessing.pool import ThreadPool
+
 from resources.s_films import Film   # resource model
 from models.datamodels.films import Films  # pydantic model
 from models.datamodels.characters import Characters
 
 from dal.db_conn_helper import get_db_conn
 from dal.dml import insert_resource
-from utils.fetch_data import hit_url
+from utils.fetch_data import hit_url, fetch_char_names
 from utils.timing import timeit
 
 
@@ -85,9 +87,16 @@ if __name__ == "__main__":
         film_data.url,
     ]
 
+    # DB operation
     result = insert_resource(
         "film", "film_id", film_data.episode_id, film_columns, film_values
     )
+
+    characters = film_data.characters
+    pool = ThreadPool(5)
+    results = pool.map(fetch_char_names, characters)
+
+    breakpoint()
 
     # TODO
     # capture all characters
@@ -95,7 +104,7 @@ if __name__ == "__main__":
     # only values will change
     # column list can be once created and re-used
 
-    #character_data = store_characters()
+    character_data = store_characters()
 
     # TODO
     # capture all planets
