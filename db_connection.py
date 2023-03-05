@@ -15,7 +15,7 @@ connection = pymysql.connect(host='127.0.0.1',
                              password='Amin@5070',
                              database='starwarsDB',
                              cursorclass=pymysql.cursors.DictCursor)
-
+breakpoint()
 cursor=connection.cursor()
 cursor.execute("SHOW DATABASES")
 results=cursor.fetchall()

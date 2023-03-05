@@ -17,9 +17,7 @@ from the API using Python.
 import sys
 import random
 import argparse
-
 import requests
-
 from utils.timing import timeit
 from utils.randgen import ProduceChars
 

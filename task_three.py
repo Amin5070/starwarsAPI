@@ -81,6 +81,8 @@ if __name__ == "__main__":
     starships_data = starships_object.get_sample_data(id_ = 9)
     starships_data = Starships(**starships_data)
     pprint(starships_object.pull_random_data())
+    print("*" * 50, "\n")
+
 
     vehicle_object = Vehicle()
     total_vehicle = vehicle_object.get_count()
