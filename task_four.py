@@ -97,7 +97,7 @@ if __name__ == "__main__":
 
     #character_data = store_characters()
 
-    # TODO - bugs
+    # TODO - bugs/bugs
     # capture all planets
     # film_data.planets
     # only values will change
